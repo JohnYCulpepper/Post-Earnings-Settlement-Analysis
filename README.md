@@ -117,4 +117,8 @@ You may have committed but not pushed.
 git remote -v     # confirms the repo you're connected to
 git status        # shows if you're ahead of origin
 git push
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 62a7509e8af4d7a4fa44c223cc7a1e7692592cc8
