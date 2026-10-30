@@ -1,0 +1,6 @@
+numpy
+yfinance
+pandas
+matlibplot.pyplot
+warnings
+notebook
