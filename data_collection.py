@@ -1,4 +1,6 @@
 import warnings
+
+# Ignore FutureWarnings and warnings related to inplace operations
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", message=".*inplace.*")
 
