@@ -3,7 +3,7 @@
 The **methodology** that was used was the `price discovery completion metric` (duration-based measurement of settlement days):
 1. Calculate the historical daily standard deviation or return of the stock in a period a year before its earnings release to the day of release.
 2. Capture the days post-earnings compare |Δdaily(%)| to the historical SD.
-3. When a day's |Δdaily(%)| < historical SD, a snapshot is created.
+3. When a day's |Δdaily(%)| <= historical SD, a snapshot is created.
 4. If after N consecutive days the |Δdaily(%)| remains less than the stock's historical SD, then number of settlement days would be:\
 `settlement day = total time elapsed - N`
 5. Else the consecutive days would reset to zero, and the days would continue until the condition mentioned in 4. is met.
