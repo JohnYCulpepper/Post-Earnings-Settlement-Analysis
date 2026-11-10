@@ -41,7 +41,7 @@ git clone https://github.com/JohnYCulpepper/Post-Earnings-Settlement-Analysis.gi
 
 ## Summary
 
-`data_analysis.ipynb`: holds all the functions that collect necessary data for data_analysis.ipynb to work (e.g. Earning Dates, Historical Standard Deviation, etc.) and returns each as a `pd.DataFrame`
+`data_collection.ipynb`: holds all the functions that collect necessary data for data_analysis.ipynb to work (e.g. Earning Dates, Historical Standard Deviation, etc.) and returns each as a `pd.DataFrame`
 
 `data_analysis.ipynb`: evaluates how many days it takes for multiple tickers to settle down post-earnings, using price discovery completion metric, then plots the results in a boxplot and frequency history.
 
