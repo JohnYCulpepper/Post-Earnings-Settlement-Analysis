@@ -52,9 +52,9 @@ git clone https://github.com/JohnYCulpepper/Post-Earnings-Settlement-Analysis.gi
 ## Project Structure
 
 ```
-Work4It/
-  data_analysis.py     Utilizes data found from data_collection.py
-  data_collection.py    Collects foundational stock data
+Post-Earnings-Settlement-Analysis/
+  data_analysis.ipynb     Utilizes data found from data_collection.py
+  data_collection.ipynb    Collects foundational stock data
   README.md
 ```
 
