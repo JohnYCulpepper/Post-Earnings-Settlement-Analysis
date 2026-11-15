@@ -56,7 +56,7 @@ This analysis is exploratory and has several constraints that should be consider
 
 ### Data
 - **Data source:** Price and earnings data come from yfinance, which is free but not research-grade. It may contain errors, missing observations, or retroactive adjustments, and it is not point-in-time data.
-- **Universe selection:** [Large-cap / S&P 500 / etc.] firms are generally heavily followed by analysts, so results may not generalize to small-cap or less liquid stocks, where PEAD (Post-Earnings Announcement Drift) is typically stronger.
+- **Universe selection:** S&P 500 firms are generally heavily followed by analysts, so results may not generalize to small-cap or less liquid stocks, where PEAD (Post-Earnings Announcement Drift) is typically stronger.
   
 ### Scope
 - This project is for educational and research purposes and is not investment advice.
