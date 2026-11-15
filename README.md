@@ -38,6 +38,19 @@ git clone https://github.com/JohnYCulpepper/Post-Earnings-Settlement-Analysis.gi
    ```
    pip install -r requirements.txt
    ```
+### Limitations
+
+This analysis is exploratory and has several constraints that should be considered when interpreting the results.
+
+### Data
+- **Data source:** Price and earnings data come from yfinance, which is free but not research-grade. It may contain errors, missing observations, or retroactive adjustments, and it is not point-in-time data.
+- **Universe selection:** [Large-cap / S&P 500 / etc.] firms are generally heavily followed by analysts, so results may not generalize to small-cap or less liquid stocks, where PEAD (Post-Earnings Announcement Drift) is typically stronger.
+
+### Measuring the earnings surprise
+- **Timing of announcements:** Announcements made before market open, after close, or on non-trading days may be misaligned with the event window. If announcements are made before market open then the event window begins on the day of; after market close then an additional day the even window begins the next day; and on non-trading day, which is rare, the event window will begin measuring on the next trading day.
+
+### Scope
+- This project is for educational and research purposes and is not investment advice.
 
 ## Summary
 
