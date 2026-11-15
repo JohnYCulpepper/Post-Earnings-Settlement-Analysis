@@ -1,12 +1,24 @@
 # Post-Earnings-Settlement-Analysis
 
-The **methodology** that was used was the `price discovery completion metric` (duration-based measurement of settlement days):
+## Methodology
+### Steps for `price discovery completion metric` (duration-based measurement of settlement days):
 1. Calculate the historical daily standard deviation or return of the stock in a period a year before its earnings release to the day of release.
-2. Capture the days post-earnings compare |Δdaily(%)| to the historical SD.
-3. When a day's |Δdaily(%)| <= historical SD, a snapshot is created.
-4. If after N consecutive days the |Δdaily(%)| remains less than the stock's historical SD, then number of settlement days would be:\
+2. Capture the days post-earnings compare | Δ daily(%) | to the Historical SD.
+3. When a day's | Δ daily(%) | < historical SD, a snapshot is created.
+4. Computes Lower and Upper Bound using Historical SD:\
+`LB = Snapshot Day (1 - Historical SD)`\
+`UB = Snapshot Day (1 + Historical SD)`
+5. Compares each days Lowest and Highest Price to LB and UB, respectively:\
+`LB < Lowest and UB > Highest`
+6. If after N consecutive days the LB and UB condition in 5. is met, then number of settlement days would be:\
 `settlement day = total time elapsed - N`
-5. Else the consecutive days would reset to zero, and the days would continue until the condition mentioned in 4. is met.
+7. Else, the consecutive days would reset to zero, and the days would continue until the condition in 5. is met for all N days.
+
+### Accounting for Event Window Discrepancies
+Sometimes quarterly earnings are announcement before market opens, after close, or on non-trading days. To combat this and provide an accurate representation of time elapsed for the stock price to settle the following adjustments are set:
+- After-market Announcement: The event window begins measurement one trading day after the announcement. 
+- Before-market Announcement: The event window begins measurement on the day of the announcement.
+- Non-trading Day Announcement: The event window is set to begin on the following trading day.
 
 ## Requirements
 
@@ -45,10 +57,7 @@ This analysis is exploratory and has several constraints that should be consider
 ### Data
 - **Data source:** Price and earnings data come from yfinance, which is free but not research-grade. It may contain errors, missing observations, or retroactive adjustments, and it is not point-in-time data.
 - **Universe selection:** [Large-cap / S&P 500 / etc.] firms are generally heavily followed by analysts, so results may not generalize to small-cap or less liquid stocks, where PEAD (Post-Earnings Announcement Drift) is typically stronger.
-
-### Measuring the earnings surprise
-- **Timing of announcements:** Announcements made before market open, after close, or on non-trading days may be misaligned with the event window. If announcements are made before market open then the event window begins on the day of; after market close then an additional day the even window begins the next day; and on non-trading day, which is rare, the event window will begin measuring on the next trading day.
-
+  
 ### Scope
 - This project is for educational and research purposes and is not investment advice.
 
