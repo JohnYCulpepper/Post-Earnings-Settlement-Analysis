@@ -38,7 +38,7 @@ git clone https://github.com/JohnYCulpepper/Post-Earnings-Settlement-Analysis.gi
    ```
    pip install -r requirements.txt
    ```
-### Limitations
+## Limitations
 
 This analysis is exploratory and has several constraints that should be considered when interpreting the results.
 
